@@ -36,6 +36,42 @@
 }else if (modo == Modo.Editar)
 {
 <p>Editar registros</p>
+
+<EditForm model="@NuevaDetencion" OnInvalidSubmit="GuardarDetencion">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+
+<div class ="form-group mb-3">
+    <label for="FechaDetencion">Fecha de la detencion:</label>
+    <InputDate Id="FechaDetencion" class="form-control" @bind-Value="NuevaDetencion.FechaDetencion" />
+    <ValidationMessage For="@(()=> NuevaDetencion.FechaDetencion)"/>
+</div>
+
+<div class ="form-group mb-3">
+    <label for="Nombre">Nombre:</label>
+    <InputText Id="Nombre" class="form-control" @bind-Value="NuevaDetencion.Nombre" />
+</div>
+
+<div class="form-group mb-3">
+    <label for="Apellido">Apellido:</label>
+    <InputText Id="Pais" class="form-control" @bind-Value="NuevaDetencion.Apellido" />
+</div>
+
+<div class ="form-group mb-3">
+    <label for="Latitud">Latitud:</label>
+    <InputNumber Id="Latitud" class="form-control" @bind-Value="NuevaDetencion.Latitud" />
+    <ValidationMessage For="@(()=>NuevaDetencion.Latitud)"/>
+</div>
+
+<div class ="form-group mb-3">
+    <label for="Longitud">Longitud:</label>
+    <InputNumber Id="Longitud" class="form-control" @bind-Value="NuevaDetencion.Longitud" />
+    <ValidationMessage For="@(()=>NuevaDetencion.Longitud)"/>
+</div>
+
+<button type="submit" class="btn btn-success">Guardar</button>
+
+</EditForm>
 }
 
 @code{
@@ -48,4 +84,13 @@
     Modo modo = Modo.Lista;
 
     List<Detencion> detenciones = new List<Detencion>();
+
+        Detencion NuevaDetencion = new Detencion();
+
+        void GuardarDetencion ()
+        {
+            detenciones.Add(NuevaDetencion);
+            NuevaDetencion = new Detencion();
+            modo = Modo.Lista;
+        }
 }

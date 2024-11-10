@@ -7,5 +7,5 @@ public class DetencionContext : DbContext
     {
     }
 
-    public DbSet<Detencion> Detenciones { get; set; } = null;
+    public DbSet<Detencion> Detenciones { get; set; }
 }

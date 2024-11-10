@@ -136,3 +136,4 @@ C:\Programacion web, trabajos\Tarea_7\bin\Debug\net8.0\Swashbuckle.AspNetCore.Sw
 C:\Programacion web, trabajos\Tarea_7\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Programacion web, trabajos\Tarea_7\obj\Debug\net8.0\Tarea_7.MvcApplicationPartsAssemblyInfo.cs
 C:\Programacion web, trabajos\Tarea_7\obj\Debug\net8.0\scopedcss\Components\Layout\Tarea7Layout.razor.rz.scp.css
+C:\Programacion web, trabajos\Tarea_7\obj\Debug\net8.0\Tarea_7.sourcelink.json
