@@ -1,0 +1,51 @@
+﻿@page "/"
+@page "/mantenimiento"
+@rendermode InteractiveServer
+@using Microsoft.EntityFrameworkCore;
+
+<PageTitle>Mantenimiento</PageTitle>
+
+<h1>mantenimiento de detenciones</h1>
+
+
+@if (modo == Modo.Lista)
+{
+<h3>Listado de Detenciones</h3>
+<div><button class =" btn btn-primary" @onclick="()=>modo = Modo.Editar">Agregar</button></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha de detencion:</th>
+            <th>Nombre:</th> 
+            <th>Apellido:</th>  
+            <th>Coordenadas:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var detencion in detenciones)
+        {
+        <tr>
+            <td>@detencion.FechaDetencion</td>
+            <td>@detencion.Nombre @detencion.Apellido</td>
+            <td>@detencion.Coordenadas()</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+}else if (modo == Modo.Editar)
+{
+<p>Editar registros</p>
+}
+
+@code{
+
+    enum Modo
+    {
+        Lista,
+        Editar  
+    }
+    Modo modo = Modo.Lista;
+
+    List<Detencion> detenciones = new List<Detencion>();
+}

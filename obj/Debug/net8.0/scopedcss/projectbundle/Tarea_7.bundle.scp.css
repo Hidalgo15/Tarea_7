@@ -1,0 +1,260 @@
+/* _content/Tarea_7/Components/Layout/MainLayout.razor.rz.scp.css */
+.page[b-f1tbmzfrbs] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-f1tbmzfrbs] {
+    flex: 1;
+}
+
+.sidebar[b-f1tbmzfrbs] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-f1tbmzfrbs] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-f1tbmzfrbs]  a, .top-row[b-f1tbmzfrbs]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-f1tbmzfrbs]  a:hover, .top-row[b-f1tbmzfrbs]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-f1tbmzfrbs]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row[b-f1tbmzfrbs] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-f1tbmzfrbs]  a, .top-row[b-f1tbmzfrbs]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-f1tbmzfrbs] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-f1tbmzfrbs] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-f1tbmzfrbs] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-f1tbmzfrbs]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-f1tbmzfrbs], article[b-f1tbmzfrbs] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+#blazor-error-ui[b-f1tbmzfrbs] {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss[b-f1tbmzfrbs] {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+/* _content/Tarea_7/Components/Layout/NavMenu.razor.rz.scp.css */
+body[b-v9cplzidjv] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e4a9a9;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar[b-v9cplzidjv] {
+    background-color: #8fabf1;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(52, 46, 141, 0.1);
+}
+
+.nav-item[b-v9cplzidjv] {
+    margin-left: 1rem;
+}
+
+.nav-link[b-v9cplzidjv] {
+    color: #484dd9;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover[b-v9cplzidjv] {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del texto */
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); /* Añade un leve brillo */
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar-toggler[b-v9cplzidjv] {
+        background-color: #495057;
+        color: white;
+        border: none;
+    }
+
+    .navbar-toggler-icon[b-v9cplzidjv] {
+        background-image: url('data:image/svg+xml;base64,...'); /* Icono personalizado */
+    }
+
+    .navbar-collapse[b-v9cplzidjv] {
+        background-color: #343a40;
+    }
+}
+
+.container-fluid[b-v9cplzidjv] {
+    max-width: 1200px;
+    margin: auto;
+}
+/* _content/Tarea_7/Components/Layout/Tarea7Layout.razor.rz.scp.css */
+body[b-fas76na4i1] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.content[b-fas76na4i1]{
+    padding: 20px;
+}
+
+/* Estilo para el Navbar */
+.navbar[b-fas76na4i1] {
+    background-color: #2f2fe7; /* Fondo oscuro del Navbar */
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item[b-fas76na4i1] {
+    margin-left: 1rem;
+}
+
+.nav-link[b-fas76na4i1] {
+    color: #5580ed;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover[b-fas76na4i1] {
+    color: #ffc107; /* Color amarillo claro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento en el texto */
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); /* Efecto de brillo suave */
+}
+
+/* Estilos para el main */
+main[b-fas76na4i1] {
+    background-color: #ffffff; /* Fondo blanco para el contenido principal */
+    color: #343a40; /* Color de texto oscuro para combinar con el nav */
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+/* Añadir un borde suave entre main y navbar */
+main[b-fas76na4i1]::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    background-color: #ffc107; /* Amarillo claro, igual que el hover de los links */
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos de encabezado dentro del main */
+main h1[b-fas76na4i1], main h2[b-fas76na4i1], main h3[b-fas76na4i1] {
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+main p[b-fas76na4i1] {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #6c757d;
+}
+
+/* Botones dentro del main */
+main .btn[b-fas76na4i1] {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+main .btn:hover[b-fas76na4i1] {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .navbar-toggler[b-fas76na4i1] {
+        background-color: #495057;
+        color: white;
+        border: none;
+    }
+
+    .navbar-collapse[b-fas76na4i1] {
+        background-color: #343a40;
+    }
+
+    main[b-fas76na4i1] {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+}
+
+/* Container */
+.container-fluid[b-fas76na4i1] {
+    max-width: 100px;
+    margin: auto;
+}
