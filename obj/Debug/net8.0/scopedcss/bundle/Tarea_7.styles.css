@@ -258,3 +258,31 @@ main .btn:hover[b-fas76na4i1] {
     max-width: 100px;
     margin: auto;
 }
+/* _content/Tarea_7/Components/Pages/Acerca_de.razor.rz.scp.css */
+.text-center[b-x1vug8r1pi] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.btn i[b-x1vug8r1pi] {
+    margin-right: 8px;
+}
+
+.botonTelegram[b-x1vug8r1pi] {
+    background-color: lightblue;
+  
+}
+
+.botonWhatsapp[b-x1vug8r1pi] {
+    background-color: lightgreen;
+}
+
+.img-top-right[b-x1vug8r1pi] {
+    position: absolute;
+    top: 35px;
+    right: 250px; /* Ajusta este valor para controlar la distancia desde la derecha */
+    width: 200px;
+    margin-top: 150px;
+}

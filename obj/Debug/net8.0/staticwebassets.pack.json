@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\imgenes\\OIP.jpeg"
     },
     {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_7\\wwwroot\\imgenes\\Yo,Brazor.jpg",
+      "PackagePath": "staticwebassets\\imgenes\\Yo,Brazor.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Tarea_7.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

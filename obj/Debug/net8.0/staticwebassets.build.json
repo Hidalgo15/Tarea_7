@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vr3Z0MSoguAbqYoW8hbXvrGbvwvkqNcjWMUo1z5BXDc=",
+  "Hash": "TDWuMl1V3+FmpYTaVrv7pQgaavn+QSHO8uR7EqV0aaU=",
   "Source": "Tarea_7",
   "BasePath": "_content/Tarea_7",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgenes\\OIP.jpeg"
+    },
+    {
+      "Identity": "C:\\Programacion web, trabajos\\Tarea_7\\wwwroot\\imgenes\\Yo,Brazor.jpg",
+      "SourceId": "Tarea_7",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Programacion web, trabajos\\Tarea_7\\wwwroot\\",
+      "BasePath": "_content/Tarea_7",
+      "RelativePath": "imgenes/Yo,Brazor.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgenes\\Yo,Brazor.jpg"
     }
   ]
 }
