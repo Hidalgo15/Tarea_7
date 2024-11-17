@@ -1,6 +1,18 @@
 ﻿@page "/calendario"
 @rendermode InteractiveServer
+@inject DetencionContext dc;
+@using Microsoft.EntityFrameworkCore;
 
-<h3>Calendario de Detenciones</h3>
+<h3 class="text-center">Calendario de detenciones</h3>
 
 
+
+<Calendar Detenciones="detenciones" />
+
+@code{
+    private List<Detencion> detenciones = new List<Detencion>();
+
+    protected override async Task OnInitializedAsync(){
+        detenciones = await dc.Detenciones.ToListAsync();
+    }
+}
