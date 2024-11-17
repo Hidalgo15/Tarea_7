@@ -1,7 +1,9 @@
 ﻿@page "/"
 @page "/mantenimiento"
+@page "/mantenimiento/{id:int}"
 @rendermode InteractiveServer
-@inject DetencionContext dc
+@inject DetencionContext dc;
+@inject IJSRuntime JSx
 @using Microsoft.EntityFrameworkCore;
 
 <PageTitle>Mantenimiento</PageTitle>
@@ -10,14 +12,18 @@
 @if (modo == Modo.Lista)
 {
 <h3>Listado de Detenciones</h3>
-<div><button class =" btn btn-primary" @onclick="()=>modo = Modo.Editar">Agregar</button></div>
-<table class="table">
+<div>
+    <button class =" btn btn-primary" @onclick="()=>modo = Modo.Editar">Agregar</button>
+</div>
+
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Fecha de detencion:</th>
-            <th>Nombre:</th> 
-            <th>Apellido:</th>  
+            <th>Nombre:</th>  
+            <th>Pasaporte:</th>
             <th>Coordenadas:</th>
+            <th>Mas acciones:</th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +32,13 @@
         <tr>
             <td>@detencion.FechaDetencion</td>
             <td>@detencion.Nombre @detencion.Apellido</td>
+            <td>@detencion.Pasaporte</td>
             <td>@detencion.Coordenadas()</td>
+            <td>
+                <button class="btn btn-primary" @onclick="() => Editar (NuevaDetencion)">Editar</button>
+                <button class="btn btn-danger" @onclick="()=> Eliminar(NuevaDetencion.Id)">Eliminar</button>
+
+            </td>
         </tr>
         }
     </tbody>
@@ -36,7 +48,8 @@
 {
 <p>Editar registros</p>
 
-<EditForm model="@NuevaDetencion" OnInvalidSubmit="GuardarDetencion">
+
+<EditForm Model="NuevaDetencion" OnValidSubmit="GuardarDetencion">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
 
@@ -59,34 +72,37 @@
 <div class="form-group mb-3">
     <label for="Pasaporte">Pasaporte:</label>
     <InputText Id="Pasaporte" class="form-control" @bind-Value="NuevaDetencion.Pasaporte" />
-    <ValidationMessage For="@(()=>NuevaDetencion.Pasaporte)"/>
 </div>
 
 <div class ="form-group mb-3">
     <label for="FechaNacomiento">Fecha de nacimiento:</label>
     <InputDate Id="FechaNacomiento" class="form-control" @bind-Value="NuevaDetencion.FechaNacomiento" />
-    <ValidationMessage For="@(()=> NuevaDetencion.FechaNacomiento)"/>
 </div>
 
 <div class ="form-group mb-3">
     <label for="Latitud">Latitud:</label>
     <InputNumber Id="Latitud" class="form-control" @bind-Value="NuevaDetencion.Latitud" />
-    <ValidationMessage For="@(()=>NuevaDetencion.Latitud)"/>
 </div>
 
 <div class ="form-group mb-3">
     <label for="Longitud">Longitud:</label>
     <InputNumber Id="Longitud" class="form-control" @bind-Value="NuevaDetencion.Longitud" />
-    <ValidationMessage For="@(()=>NuevaDetencion.Longitud)"/>
 </div>
 
-<button type="submit" class="btn btn-success">Guardar</button>
+<div class="mb-3">
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <button  type="buttom" class="btn btn-secondary" @onclick="Volver">Volver</button>
+</div>
 
 </EditForm>
+
+
 }
 
 @code{
 
+     [Parameter]
+    public int id {get; set;}
     enum Modo
     {
         Lista,
@@ -96,14 +112,52 @@
 
     List<Detencion> detenciones = new List<Detencion>();
 
-        Detencion NuevaDetencion = new Detencion();
+    Detencion NuevaDetencion = new Detencion();
 
-        void GuardarDetencion ()
+    
+    protected override void OnInitialized()
+    {
+        detenciones = dc.Detenciones.ToList();
+        StateHasChanged();
+    }
+       async Task  GuardarDetencion ()
         {
-            
-
-            detenciones.Add(NuevaDetencion);
-            NuevaDetencion = new Detencion();
+            if(NuevaDetencion.Id == 0){
+                dc.Detenciones.Add(NuevaDetencion);
+                await dc.SaveChangesAsync();
+                await JSx.InvokeVoidAsync("alert", "Se guardo correctamente");
+            }else{
+                dc.Detenciones.Update(NuevaDetencion);
+                await dc.SaveChangesAsync();
+                await JSx.InvokeVoidAsync("alert", "Se modifico correctamente");
+            }
             modo = Modo.Lista;
         }
+
+        void Editar (Detencion NDetencion)
+        {
+            this.NuevaDetencion = NDetencion;
+            modo = Modo.Editar;
+        }
+
+        async Task Eliminar(int Id)
+        {
+            var DeleteDetencion = dc.Detenciones.FirstOrDefault(d =>d.Id == Id);
+            
+            if(DeleteDetencion != null){
+            bool Confirmar = await JSx.InvokeAsync<bool>("confirm", "¿Estas seguro de querer eliminar este registro?");
+            
+            if(Confirmar){
+                dc.Detenciones.Remove(DeleteDetencion);
+                await dc.SaveChangesAsync();
+                detenciones = dc.Detenciones.ToList();
+                StateHasChanged();
+            }
+        }
+    }
+     async Task Volver(){
+        modo = Modo.Lista;
+    }
+
+   
 }
