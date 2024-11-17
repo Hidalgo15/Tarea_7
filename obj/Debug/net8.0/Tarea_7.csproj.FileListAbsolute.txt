@@ -163,3 +163,4 @@ C:\Programacion web, trabajos\Tarea_7\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAna
 C:\Programacion web, trabajos\Tarea_7\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Programacion web, trabajos\Tarea_7\bin\Debug\net8.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
 C:\Programacion web, trabajos\Tarea_7\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Programacion web, trabajos\Tarea_7\obj\Debug\net8.0\scopedcss\Components\Propios\Calendar.razor.rz.scp.css
